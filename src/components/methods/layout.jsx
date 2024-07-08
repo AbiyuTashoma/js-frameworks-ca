@@ -13,7 +13,7 @@ function Nav() {
 function Header() {
     return (
         <header>
-            <div>E-Com logo</div>
+            <div class="logo">eCom.</div>
             <Nav />
         </header>
     )
