@@ -1,6 +1,29 @@
 .logo {
     font-family: "Satisfy", cursive;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 75px;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 75px;
+    color: $logo-color;
+    border: thin #6f5e5e solid;
+    width: min-content;
+    padding: 25px;
+    margin: 10px;
+    transition-property: background-color;
+    &:hover {
+        cursor: pointer;
+        background-color: gray;
+        transition-duration: 1s;
+    }
+}
+
+.header-section {
+    display: flex;
+    // justify-content: space-between;
+    align-items: flex-end;
+}
+
+.navigation {
+    list-style: none;
+    display: flex;
+    gap: 30px;
 }

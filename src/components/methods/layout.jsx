@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 
 function Nav() {
     return (
-        <ul>
+        <ul class="navigation">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/cart">Cart</Link></li>
         </ul>
@@ -12,7 +12,7 @@ function Nav() {
 
 function Header() {
     return (
-        <header>
+        <header class="header-section">
             <div class="logo">eCom.</div>
             <Nav />
         </header>
