@@ -4,6 +4,7 @@ import Layout from "./components/methods/layout";
 import Home from "./components/pages/home";
 import RouteNotFound from "./components/pages/routeNotFound";
 import Cart from "./components/pages/cart";
+import "./components/styles/index.scss";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="*" element={<RouteNotFound />} />
         </Route>
       </Routes>
+      
     </div>
   );
 }
