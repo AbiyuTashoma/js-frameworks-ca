@@ -5,6 +5,7 @@ function Nav() {
     return (
         <ul class="navigation">
             <li><Link to="/">Home</Link></li>
+            <li>Search bar</li>
             <li><Link to="/cart">Cart</Link></li>
         </ul>
     );
@@ -12,8 +13,10 @@ function Nav() {
 
 function Header() {
     return (
-        <header class="header-section">
-            <div class="logo">eCom.</div>
+        <header>
+            <div class="logo-container">
+                <Link class="logo" to="/">eCom.</Link>
+            </div>
             <Nav />
         </header>
     )
@@ -23,7 +26,6 @@ function Footer() {
     return (
       <footer>
         <div>E-Com footer</div>
-          <Nav />
       </footer>
     );
 }
