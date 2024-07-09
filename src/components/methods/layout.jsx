@@ -4,9 +4,9 @@ import { Link, Outlet } from "react-router-dom";
 function Nav() {
     return (
         <ul class="navigation">
-            <li><Link to="/">Home</Link></li>
+            <li><Link className="menu" to="/">Home</Link></li>
             <li>Search bar</li>
-            <li><Link to="/cart">Cart</Link></li>
+            <li><Link className="menu" to="/cart">Cart</Link></li>
         </ul>
     );
 }
