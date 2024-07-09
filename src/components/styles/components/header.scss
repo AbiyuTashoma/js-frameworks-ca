@@ -9,6 +9,7 @@ body {
 }
 
 .logo {
+    text-decoration: none;
     font-family: "Satisfy", cursive;
     font-weight: 400;
     font-style: normal;
@@ -41,6 +42,15 @@ body {
     margin: 0 auto;
 }
 
-a {
+.menu {
     text-decoration: none;
+    color: black;
+    background-color: rgb(202, 202, 202);
+    border-radius: 5px;
+    padding: 10px 30px;
+    transition-property: background-color;
+    transition-duration: 1s;
+    &:hover {
+        background-color: rgb(129, 129, 129);
+    }
 }
