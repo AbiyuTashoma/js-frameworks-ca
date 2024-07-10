@@ -18,20 +18,13 @@ body {
     border: thin $logo-color solid;
     padding: 0 25px;
     transition-property: background-color;
+    transition-duration: 1s;
 
     &:hover {
         cursor: pointer;
         background-color: $logo-background-color-hover;
-        transition-duration: 1s;
     }
 }
-
-// .header-section {
-//     margin: 0 auto;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: flex-end;
-// }
 
 .navigation {
     list-style: none;
@@ -45,12 +38,12 @@ body {
 .menu {
     text-decoration: none;
     color: black;
-    background-color: rgb(202, 202, 202);
+    background-color: $menu-color;
     border-radius: 5px;
     padding: 10px 30px;
     transition-property: background-color;
     transition-duration: 1s;
     &:hover {
-        background-color: rgb(129, 129, 129);
+        background-color: $menu-background-color-hover;
     }
 }
