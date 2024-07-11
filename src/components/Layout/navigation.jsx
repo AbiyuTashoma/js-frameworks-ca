@@ -3,7 +3,7 @@ import Search from "./search";
 
 function Nav() {
     return (
-        <ul class="navigation">
+        <ul className="navigation">
             <li><Link className="menu" to="/">Home</Link></li>
             <li><Search /></li>
             <li><Link className="menu" to="/cart">Cart</Link></li>

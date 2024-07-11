@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 function Logo() {
     return (
-        <div class="logo-container">
-            <Link class="logo" to="/">eCom.</Link>
+        <div className="logo-container">
+            <Link className="logo" to="/">eCom.</Link>
         </div>
     );
 }

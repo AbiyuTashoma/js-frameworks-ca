@@ -1,7 +1,7 @@
-import Data from "../api/api";
+import ProductsData from "../data/productsData";
 
 function Home() {
-  return  <Data />;
+  return  <ProductsData />;
 }
 
 export default Home;
