@@ -1,13 +1,13 @@
 function Search() {
     return (
-        <form class="input-group search-form">
-            <label class="input-group-text" for="search">
+        <form className="input-group search-form">
+            <label className="input-group-text" htmlFor="search">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
                 fill="currentColor"
-                class="bi bi-search"
+                className="bi bi-search"
                 viewBox="0 0 16 16"
               >
                 <path
@@ -15,7 +15,7 @@ function Search() {
                 />
               </svg>
             </label>
-            <input type="search" class="form-control" id="search" placeholder="search here"/>
+            <input type="search" className="form-control" id="search" placeholder="search here"/>
           </form>
     );
 }
