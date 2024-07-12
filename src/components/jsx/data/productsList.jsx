@@ -1,5 +1,5 @@
 import { Row, Col, Container } from "react-bootstrap";
-import { Price, DiscountedPrice } from "../styled/styled";
+import DisplayPrice from "./price";
 import { Link } from "react-router-dom";
 
 function Products(products) {
