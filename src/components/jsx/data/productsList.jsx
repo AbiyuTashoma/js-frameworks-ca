@@ -14,10 +14,7 @@ function Products(products) {
                         <Row className="list-detail">
                             <Col>
                                 <div> {product['title']}</div>
-                                <div> 
-                                    <Price isDiscounted = { product['price'] > product['discountedPrice'] }> { product['price'] } </Price> 
-                                    { (product['price'] > product['discountedPrice']) ? <DiscountedPrice isDiscounted={ (product['price'] > product['discountedPrice']) }>{ product['discountedPrice'] }</DiscountedPrice> : ''}
-                                </div>
+                                { DisplayPrice(product['price'], product['discountedPrice'])}
                             </Col>
                             <Col className="view-button-container">
                                 <Link to={'/' + product.id} className="view-button">View</Link>
