@@ -2,7 +2,7 @@ import { Row, Col, Container } from "react-bootstrap";
 import DisplayPrice from "./price";
 import { Link } from "react-router-dom";
 
-function Products(products) {
+function ProductsList(products) {
   return (
         <Container>
             <Row xs="1" sm="2" lg="3" xl={4}>
@@ -27,4 +27,4 @@ function Products(products) {
   );
 }
 
-export default Products;
+export default ProductsList;
