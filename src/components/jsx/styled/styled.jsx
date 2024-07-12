@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-export const DiscountedPrice = styled.span`
+export const StyledDiscountedPrice = styled.span`
 color: ${(props) => (props.isDiscounted ? 'red' : '')};
 `;
 
-export const Price = styled.span`
+export const StyledPrice = styled.span`
 text-decoration: ${(props) => (props.isDiscounted ? 'line-through' : '')};
 `;
