@@ -1,4 +1,6 @@
 import { Row, Col, Container } from "react-bootstrap";
+import { Price, DiscountedPrice } from "../styled/styled";
+import { Link } from "react-router-dom";
 
 function Products(products) {
   return (
@@ -7,10 +9,13 @@ function Products(products) {
                 {products.map((product) =>
                     <Col key={product.id} className="products-col">
                         <img src= {product['image']['url']} className="list-image"/>
-                        <div>Title: {product['title']}</div>
-                        <div>Price: {product['discountedPrice']}</div>
+                        <div> {product['title']}</div>
+                        <div> 
+                            <Price isDiscounted = { product['price'] > product['discountedPrice'] }> { product['price'] } </Price> 
+                            { (product['price'] > product['discountedPrice']) ? <DiscountedPrice isDiscounted={ (product['price'] > product['discountedPrice']) }>{ product['discountedPrice'] }</DiscountedPrice> : ''}
+                        </div>
                     </Col>
-                )};
+                )}
             </Row>
         </Container>
   );
