@@ -6,3 +6,26 @@
     border-radius: 7px;
     max-width: 100%;
 }
+
+.list-detail {
+    margin: 10px auto;
+}
+
+.view-button-container {
+    display: flex;
+    justify-content: end;
+    align-self: center;
+}
+
+.view-button {
+    background: $view-button-background-color;
+    text-decoration: none;
+    color: $view-button-color;
+    padding: 5px 25px;
+    border-radius: 5px;
+    transition-property: background-color;
+    transition-duration: 1s;
+    &:hover {
+        background-color: $view-button-background-color-hover;
+    }
+}
