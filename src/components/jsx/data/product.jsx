@@ -1,12 +1,15 @@
 import GetApi from "../api/getApi";
 import Loading from "./loading";
 import Error from "./error";
-import ProductsList from "./productsList";
+import { useParams } from "react-router-dom";
+import DisplayAProduct from "./displayAProduct";
 
 const url = 'https://v2.api.noroff.dev/online-shop';
 
 function ProductsData() {
-  const { data, isLoading, isError } = GetApi(url);
+  let { id } = useParams();
+
+  const { data, isLoading, isError } = GetApi(url + `/${id}`);
 
   if (isLoading || !data) {
     return <Loading />;
@@ -18,7 +21,7 @@ function ProductsData() {
 
   console.log(data['data']);
 
-  return ProductsList(data['data']);
+  return DisplayAProduct(data['data']);
 }
 
 export default ProductsData;
