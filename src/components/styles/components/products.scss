@@ -29,3 +29,15 @@
         background-color: $view-button-background-color-hover;
     }
 }
+
+.product-title, 
+.product-description,
+.product-price {
+    font-weight: bold;
+    margin: 5px auto;
+}
+
+.product-description,
+.product-price {
+    font-weight: normal;
+}

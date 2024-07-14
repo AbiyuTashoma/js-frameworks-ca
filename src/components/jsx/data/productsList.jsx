@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function ProductsList(products) {
   return (
         <Container>
-            <Row xs="1" sm="2" lg="3" xl={4}>
+            <Row xs="1" sm="2" lg="3" xxl="4">
                 {products.map((product) =>
                     <Col key={product.id} className="products-col">
                         <Link to={'/' + product.id}>

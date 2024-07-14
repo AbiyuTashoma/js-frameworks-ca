@@ -11,8 +11,8 @@ function DisplayAProduct(product) {
                 </Col>
                 <Col className="list-detail">
                     <Row>
-                        <div> {product['title']} </div>
-                        <div> {product['description']} </div>
+                        <div className="product-title"> {product['title']} </div>
+                        <div className="product-description"> {product['description']} </div>
                         { DisplayPrice(product['price'], product['discountedPrice'])}
                     </Row>
                     <Row>
