@@ -1,5 +1,6 @@
 import { Row, Col, Container, Button } from "react-bootstrap";
 import DisplayPrice from "./price";
+import Reviews from "./reviews";
 
 function DisplayAProduct(product) {
   return (
@@ -21,18 +22,7 @@ function DisplayAProduct(product) {
                     </Row>
                 </Col>
             </Row>
-            <Row>
-                <div>Reviews</div>
-                <div>
-                    { product['reviews'].map((review) =>
-                    <div key={review.id}>
-                        <div>{review['username']}</div>
-                        <div>{review['rating']}</div>
-                        <div>{review['description']}</div>
-                    </div>
-        
-                )}</div>
-            </Row>
+            { Reviews(product['reviews'])}
         </Container>
   );
 }
