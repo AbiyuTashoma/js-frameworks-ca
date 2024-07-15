@@ -9,7 +9,7 @@ function ProductsList(products) {
                 {products.map((product) =>
                     <Col key={product.id} className="products-col">
                         <Link to={'/' + product.id}>
-                            <img src= {product['image']['url']} className="list-image"/>
+                            <img src= {product['image']['url']} className="list-image" alt="image"/>
                         </Link>
                         <Row className="list-detail">
                             <Col>
