@@ -1,4 +1,4 @@
-import { StyledPrice, StyledDiscountedPrice } from "../styled/styled"
+import { StyledDiscountedPrice } from "../styled/styled"
 
 function DisplayPrice(ordPrice, discPrice) {
     const isdiscount = Boolean(ordPrice > discPrice)
