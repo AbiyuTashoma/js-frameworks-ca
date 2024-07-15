@@ -7,7 +7,7 @@ function DisplayAProduct(product) {
         <Container key={product.id}>
             <Row xs="1" sm="2">
                 <Col>
-                    <img src= {product['image']['url']} className="list-image" alt="image"/>
+                    <img src= {product['image']['url']} className="list-image" alt="picture"/>
                 </Col>
                 <Col className="list-detail">
                     <Row>
