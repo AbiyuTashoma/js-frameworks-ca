@@ -32,7 +32,8 @@
 
 .product-title, 
 .product-description,
-.product-price {
+.product-price,
+.reviewer-name {
     font-weight: bold;
     margin: 5px auto;
 }
@@ -41,3 +42,16 @@
 .product-price {
     font-weight: normal;
 }
+
+.reviewer-name {
+    margin: 0;
+}
+
+.fa {
+    color: lightblue
+}
+
+.review-checked {
+    color: orange;
+}
+

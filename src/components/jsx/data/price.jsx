@@ -5,8 +5,8 @@ function DisplayPrice(ordPrice, discPrice) {
     const currency = 'NOK';
     return (
         <div className="product-price"> 
-            <div> { discPrice } {currency}</div> 
-            { isdiscount ? <StyledDiscountedPrice isDiscounted={ isdiscount }> ({Math.round (discPrice - ordPrice)} {currency})</StyledDiscountedPrice> : ''}
+            <div> { discPrice }&nbsp;{currency}</div> 
+            { isdiscount ? <StyledDiscountedPrice isDiscounted={ isdiscount }> ({Math.round (discPrice - ordPrice)}&nbsp;{currency})</StyledDiscountedPrice> : ''}
         </div>
     );
 }
