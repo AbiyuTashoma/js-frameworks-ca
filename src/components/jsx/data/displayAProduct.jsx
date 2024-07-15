@@ -5,7 +5,7 @@ import Reviews from "./reviews";
 function DisplayAProduct(product) {
   return (
         <Container key={product.id}>
-            <Row xs="1" sm="2">
+            <Row xs="1" md="2">
                 <Col>
                     <img src= {product['image']['url']} className="list-image"/>
                 </Col>
@@ -22,7 +22,9 @@ function DisplayAProduct(product) {
                     </Row>
                 </Col>
             </Row>
+            <Row className="mt-4">
             { Reviews(product['reviews'])}
+            </Row>
         </Container>
   );
 }
