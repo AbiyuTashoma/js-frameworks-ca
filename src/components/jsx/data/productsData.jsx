@@ -2,8 +2,7 @@ import GetApi from "../api/getApi";
 import Loading from "./loading";
 import Error from "./error";
 import ProductsList from "./productsList";
-
-const url = 'https://v2.api.noroff.dev/online-shop';
+import { url } from "./js/constants";
 
 function ProductsData() {
   const { data, isLoading, isError } = GetApi(url);
