@@ -2,12 +2,12 @@ import { Row, Col, Container, Button } from "react-bootstrap";
 import DisplayPrice from "./price";
 import Reviews from "./reviews";
 
-function DisplayAProduct(product) {
+function DisplayAProduct(product, cart, total, addProduct, removeProduct, clearCart) {
   return (
         <Container key={product.id}>
             <Row xs="1" md="2">
                 <Col>
-                    <img src= {product['image']['url']} className="list-image"/>
+                    <img src= {product['image']['url']} className="list-image" alt=""/>
                 </Col>
                 <Col className="list-detail">
                     <Row>
@@ -17,8 +17,9 @@ function DisplayAProduct(product) {
                     </Row>
                     <Row>
                         <input type="number" name="quantity" id="quantity" />
-                        <Button>Add to cart</Button>
-                        <Button>Checkout</Button>
+                        <Button onClick={() => addProduct(product)}>Add to cart</Button>
+                        <Button onClick={() => removeProduct(product)}>Remove from cart</Button>
+                        <div>Total: {total}</div>
                     </Row>
                 </Col>
             </Row>
