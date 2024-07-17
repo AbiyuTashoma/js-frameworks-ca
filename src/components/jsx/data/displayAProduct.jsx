@@ -2,7 +2,7 @@ import { Row, Col, Container, Button } from "react-bootstrap";
 import DisplayPrice from "./price";
 import Reviews from "./reviews";
 
-function DisplayAProduct(product) {
+function DisplayAProduct(product, cart, total, addProduct, removeProduct, clearCart) {
   return (
         <Container key={product.id}>
             <Row xs="1" md="2">
@@ -17,8 +17,9 @@ function DisplayAProduct(product) {
                     </Row>
                     <Row>
                         <input type="number" name="quantity" id="quantity" />
-                        <Button onClick={() => console.log('Add to cart')}>Add to cart</Button>
-                        <Button onClick={() => console.log('Checkout')}>Checkout</Button>
+                        <Button onClick={() => addProduct(product)}>Add to cart</Button>
+                        <Button onClick={() => removeProduct(product)}>Remove from cart</Button>
+                        <div>Total: {total}</div>
                     </Row>
                 </Col>
             </Row>
