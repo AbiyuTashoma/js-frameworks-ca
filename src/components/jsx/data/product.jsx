@@ -6,7 +6,7 @@ import DisplayAProduct from "./displayAProduct";
 
 const url = 'https://v2.api.noroff.dev/online-shop';
 
-function ProductsData() {
+function Product() {
   let { id } = useParams();
 
   const { data, isLoading, isError } = GetApi(url + `/${id}`);
@@ -24,4 +24,4 @@ function ProductsData() {
   return DisplayAProduct(data['data']);
 }
 
-export default ProductsData;
+export default Product;
