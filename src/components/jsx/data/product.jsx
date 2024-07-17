@@ -3,22 +3,19 @@ import Loading from "./loading";
 import Error from "./error";
 import { useParams } from "react-router-dom";
 import DisplayAProduct from "./displayAProduct";
-import useStore from "../store/cart";
 import { shallow } from "zustand/shallow";
-
-const url = 'https://v2.api.noroff.dev/online-shop';
+import useStore from "../store/cart";
+import { url } from "./js/constants";
 
 function Product() {
   let { id } = useParams();
-
   const { data, isLoading, isError } = GetApi(url + `/${id}`);
-  const { cart, total, addProduct, removeProduct, clearCart } = useStore(
+
+  const { total, addProduct, removeProduct } = useStore(
     (state) => ({
-      cart: state.cart,
       total: state.total,
       addProduct: state.addProduct,
       removeProduct: state.removeProduct,
-      clearCart: state.clearCart
     }), 
     shallow,
   );
@@ -33,7 +30,7 @@ function Product() {
 
   console.log(data['data']);
 
-  return DisplayAProduct(data['data'], cart, total, addProduct, removeProduct, clearCart);
+  return DisplayAProduct(data['data'], total, addProduct, removeProduct);
 }
 
 export default Product;

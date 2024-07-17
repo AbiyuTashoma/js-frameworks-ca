@@ -2,7 +2,8 @@ import { Row, Col, Container, Button } from "react-bootstrap";
 import DisplayPrice from "./price";
 import Reviews from "./reviews";
 
-function DisplayAProduct(product, cart, total, addProduct, removeProduct, clearCart) {
+function DisplayAProduct(product, total, addProduct, removeProduct) {
+    
   return (
         <Container key={product.id}>
             <Row xs="1" md="2">
