@@ -7,10 +7,21 @@ function removeFromCart(aCart, anItem) {
   productIndex = cartCopy.findIndex((product) => product.id === anItem.id);
 
   if (productIndex !== -1) {
-    cartCopy = [
-      ...cartCopy.slice(0, productIndex),
-      ...cartCopy.slice(productIndex + 1),
-    ];
+    if (cartCopy[productIndex].quantity === 1) {
+      cartCopy = [
+        ...cartCopy.slice(0, productIndex),
+        ...cartCopy.slice(productIndex + 1),
+      ];
+    } else {
+      cartCopy = [
+        ...cartCopy.slice(0, productIndex),
+        {
+          ...cartCopy[productIndex],
+          quantity: cartCopy[productIndex].quantity - 1,
+        },
+        ...cartCopy.slice(productIndex + 1),
+      ];
+    }
   }
 
   newTotal = cartCopy.reduce((currentTotal, product) => {
