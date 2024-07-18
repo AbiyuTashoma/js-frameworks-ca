@@ -1,6 +1,7 @@
 body {
     margin: 0 auto;
     max-width: 1440px;
+    min-width: 380px;
 }
 
 .logo-container {
@@ -34,6 +35,35 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 10px;
+}
+
+.cart {
+    text-decoration: none;
+    position: relative;
+    transition-property: all;
+    transition-duration: 0.5s;
+    
+    &:hover {
+        opacity: 70%;
+    }
+}
+
+.cart-icon {
+    width: 2em;
+    
+}
+
+.item-count {
+    text-align: center;
+    padding: 2px;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background-color: green;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;    
 }
 
 .menu {

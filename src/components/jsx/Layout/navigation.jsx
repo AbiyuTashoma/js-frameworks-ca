@@ -2,10 +2,12 @@ import { Link } from "react-router-dom";
 import Search from "./search";
 import useStore from "../store/cart";
 import { shallow } from "zustand/shallow";
+import Cart from "./cart";
 
 function Nav() {
-    const { total } = useStore(
+    const { cart, total } = useStore(
     (state) => ({
+      cart: state.cart,
       total: state.total,
     }), 
     shallow,
@@ -14,7 +16,7 @@ function Nav() {
         <ul className="navigation">
             <li><Link className="menu" to="/">Home</Link></li>
             <li><Search /></li>
-            <li><Link className="menu" to="/cart">Cart {total}</Link></li>
+            <li>{Cart(cart.length, total)}</li>
         </ul>
     );
 }
