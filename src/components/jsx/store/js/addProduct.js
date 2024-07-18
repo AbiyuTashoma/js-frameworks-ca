@@ -7,7 +7,12 @@ function addToCart(aCart, anItem) {
   productIndex = cartCopy.findIndex((product) => product.id === anItem.id);
 
   if (productIndex === -1) {
-    cartCopy.push({ id: anItem.id, quantity: 1 });
+    cartCopy.push({
+      id: anItem.id,
+      quantity: 1,
+      discountedPrice: anItem.discountedPrice,
+      price: anItem.price,
+    });
   } else {
     cartCopy = [
       ...cartCopy.slice(0, productIndex),
