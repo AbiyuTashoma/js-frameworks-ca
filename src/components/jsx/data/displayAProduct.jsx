@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import DisplayPrice from "./price";
 import Reviews from "./reviews";
 import InCart from "./inCart";
+import { inArray } from "./js/inArray";
 
 function DisplayAProduct(product, cart, addProduct, removeProduct) {
     
@@ -21,7 +22,7 @@ function DisplayAProduct(product, cart, addProduct, removeProduct) {
                     <Row>
                         <div className="mt-2">
                             <Button className="me-3" variant="success" onClick={() => addProduct(product)}>Add to cart</Button>
-                            <Button variant="secondary" onClick={() => removeProduct(product) } disabled= {!Boolean(cart.length)}>Remove from cart</Button>
+                            <Button variant="secondary" onClick={() => removeProduct(product) } disabled= {!inArray(cart, product)}>Remove from cart</Button>
                         </div>
                         { InCart(cart, product) }
                         <div className="mt-4">
