@@ -4,16 +4,16 @@ import Error from "./error";
 import { useParams } from "react-router-dom";
 import DisplayAProduct from "./displayAProduct";
 import { shallow } from "zustand/shallow";
-import useStore from "../store/cart";
+import useStore from "../store/cartStore";
 import { url } from "./js/constants";
 
 function Product() {
   let { id } = useParams();
   const { data, isLoading, isError } = GetApi(url + `/${id}`);
 
-  const { total, addProduct, removeProduct } = useStore(
+  const { cart, addProduct, removeProduct } = useStore(
     (state) => ({
-      total: state.total,
+      cart: state.cart,
       addProduct: state.addProduct,
       removeProduct: state.removeProduct,
     }), 
@@ -30,7 +30,7 @@ function Product() {
 
   console.log(data['data']);
 
-  return DisplayAProduct(data['data'], total, addProduct, removeProduct);
+  return DisplayAProduct(data['data'], cart, addProduct, removeProduct);
 }
 
 export default Product;

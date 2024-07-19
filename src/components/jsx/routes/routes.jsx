@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "../Layout/layout";
 import Home from "../pages/home";
 import RouteNotFound from "../pages/routeNotFound";
-import Cart from "../pages/cart";
+import Cart from "../pages/checkout";
 import AProduct from "../pages/aProduct";
 
 function AppRoutes() {

@@ -1,8 +1,9 @@
 import { Row, Col, Container, Button } from "react-bootstrap";
 import DisplayPrice from "./price";
 import Reviews from "./reviews";
+import InCart from "./inCart";
 
-function DisplayAProduct(product, total, addProduct, removeProduct) {
+function DisplayAProduct(product, cart, addProduct, removeProduct) {
     
   return (
         <Container key={product.id}>
@@ -17,10 +18,9 @@ function DisplayAProduct(product, total, addProduct, removeProduct) {
                         { DisplayPrice(product['price'], product['discountedPrice'])}
                     </Row>
                     <Row>
-                        <input type="number" name="quantity" id="quantity" />
+                        { InCart(cart, product) }
                         <Button onClick={() => addProduct(product)}>Add to cart</Button>
                         <Button onClick={() => removeProduct(product)}>Remove from cart</Button>
-                        <div>Total: {total}</div>
                     </Row>
                 </Col>
             </Row>

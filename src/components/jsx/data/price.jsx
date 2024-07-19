@@ -1,12 +1,12 @@
 import { StyledDiscountedPrice } from "../styled/styled"
 
-function DisplayPrice(ordPrice, discPrice) {
+function DisplayPrice(ordPrice, discPrice, quantity = 1) {
     const isdiscount = Boolean(ordPrice > discPrice)
     const currency = 'NOK';
     return (
         <div className="product-price"> 
-            <div> { discPrice }&nbsp;{currency}</div> 
-            { isdiscount ? <StyledDiscountedPrice isDiscounted={ isdiscount }> ({Math.round (discPrice - ordPrice)}&nbsp;{currency})</StyledDiscountedPrice> : ''}
+            <div> { Math.round(discPrice * quantity) }&nbsp;{currency}</div> 
+            { isdiscount ? <StyledDiscountedPrice isDiscounted={ isdiscount }> ({Math.round ((discPrice - ordPrice) * quantity)}&nbsp;{currency})</StyledDiscountedPrice> : ''}
         </div>
     );
 }
