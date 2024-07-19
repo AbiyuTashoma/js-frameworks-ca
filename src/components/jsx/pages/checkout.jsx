@@ -1,4 +1,4 @@
-import useStore from "../store/cart";
+import useStore from "../store/cartStore";
 import { shallow } from "zustand/shallow";
 import { Button } from "react-bootstrap";
 
