@@ -2,7 +2,7 @@ import useStore from "../store/cartStore";
 import { shallow } from "zustand/shallow";
 import { Button } from "react-bootstrap";
 
-function Cart() {
+function Checkout() {
   const { total, clearCart } = useStore(
     (state) => ({
       total: state.total,
@@ -18,4 +18,4 @@ function Cart() {
     );
 }
 
-export default Cart;
+export default Checkout;

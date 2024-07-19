@@ -57,8 +57,20 @@
 
 .incart {
     border-top: solid thin;
-    margin: 20px auto;
+    border-bottom: solid thin;
+    margin: 20px;
     padding-top: 10px;
+    padding-bottom: 10px;
     display: flex;
     gap: 30px;
+    width: fit-content;
+}
+
+.checkout-button {
+    @extend .menu;
+    width: fit-content;
+    background-color: rgb(91, 210, 154);
+    &:hover {
+        background-color: rgb(40, 170, 109);
+    }
 }

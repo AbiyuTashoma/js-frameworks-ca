@@ -1,4 +1,5 @@
 import { Row, Col, Container, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import DisplayPrice from "./price";
 import Reviews from "./reviews";
 import InCart from "./inCart";
@@ -18,9 +19,14 @@ function DisplayAProduct(product, cart, addProduct, removeProduct) {
                         { DisplayPrice(product['price'], product['discountedPrice'])}
                     </Row>
                     <Row>
+                        <div className="mt-2">
+                            <Button className="me-3" variant="success" onClick={() => addProduct(product)}>Add to cart</Button>
+                            <Button variant="secondary" onClick={() => removeProduct(product) } disabled= {!Boolean(cart.length)}>Remove from cart</Button>
+                        </div>
                         { InCart(cart, product) }
-                        <Button onClick={() => addProduct(product)}>Add to cart</Button>
-                        <Button onClick={() => removeProduct(product)}>Remove from cart</Button>
+                        <div className="mt-4">
+                            {cart.length ? <Link className="checkout-button" to="/checkout">Checkout</Link> : ""}
+                        </div>
                     </Row>
                 </Col>
             </Row>
