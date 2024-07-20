@@ -1,11 +1,25 @@
+import useStore from "../store/cartStore";
+import { shallow } from "zustand/shallow";
 import DisplayPrice from "./price";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { currency } from "./js/constants";
 
-function ShowCart (cart, sum, clearCart) {
+function ShowCart () {
+    
+    const { cart, sum, addProduct, removeProduct, clearCart } = useStore(
+    (state) => ({
+        cart: state.cart,
+        sum: state.sum,
+        addProduct: state.addProduct,
+        removeProduct: state.removeProduct,            
+        clearCart: state.clearCart
+    }), 
+    shallow,
+    );
 
     const cartLength = cart.length;
+    
     return ( cartLength > 0 ?
         <div>
             <div className="show-cart">
@@ -14,6 +28,8 @@ function ShowCart (cart, sum, clearCart) {
                         <div>{item.title}</div>
                         <div>{item.quantity}</div>
                         {DisplayPrice(item.price, item.discountedPrice, item.quantity)}
+                        <Button className="me-3" variant="success" size="sm" onClick={() => addProduct(item)}>+</Button>
+                        <Button variant="danger" size="sm" onClick={() => removeProduct(item) }>-</Button>
                     </div>
                 )}
             </div>
