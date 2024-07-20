@@ -3,16 +3,16 @@ import { shallow } from "zustand/shallow";
 import ShowCart from "../data/showCart";
 
 function Checkout() {
-  const { cart, clearCart } = useStore(
+  const { cart, sum, clearCart } = useStore(
     (state) => ({
       cart: state.cart,
-      total: state.total,
+      sum: state.sum,
       clearCart: state.clearCart
     }), 
     shallow,
   );
   return (
-    <div>{ShowCart(cart, clearCart)}</div>
+    <div>{ShowCart(cart, sum, clearCart)}</div>
     );
 }
 

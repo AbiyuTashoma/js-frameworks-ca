@@ -1,8 +1,8 @@
 import { StyledDiscountedPrice } from "../styled/styled"
+import { currency } from "./js/constants";
 
 function DisplayPrice(ordPrice, discPrice, quantity = 1) {
     const isdiscount = Boolean(ordPrice > discPrice)
-    const currency = 'NOK';
     return (
         <div className="product-price"> 
             { Math.round(discPrice * quantity) }&nbsp;{currency}
