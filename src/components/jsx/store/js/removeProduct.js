@@ -1,7 +1,11 @@
+import totalCount from "./totalCount";
+import totalSum from "./totalSum";
+
 function removeFromCart(aCart, anItem) {
   let cartCopy;
   let productIndex;
   let newTotal;
+  let newSum;
 
   cartCopy = [...aCart];
   productIndex = cartCopy.findIndex((product) => product.id === anItem.id);
@@ -24,14 +28,12 @@ function removeFromCart(aCart, anItem) {
     }
   }
 
-  newTotal = cartCopy.reduce((currentTotal, product) => {
-    currentTotal += product.quantity;
-    return currentTotal;
-  }, 0);
+  newTotal = totalCount(cartCopy);
+  newSum = totalSum(cartCopy);
 
-  console.log(cartCopy);
+  console.log(cartCopy, " ", newSum);
 
-  return { cart: cartCopy, total: newTotal };
+  return { cart: cartCopy, total: newTotal, sum: newSum };
 }
 
 export default removeFromCart;

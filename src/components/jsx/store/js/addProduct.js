@@ -1,7 +1,11 @@
+import totalCount from "./totalCount";
+import totalSum from "./totalSum";
+
 function addToCart(aCart, anItem) {
   let cartCopy;
   let productIndex;
   let newTotal;
+  let newSum;
 
   cartCopy = [...aCart];
   productIndex = cartCopy.findIndex((product) => product.id === anItem.id);
@@ -9,6 +13,7 @@ function addToCart(aCart, anItem) {
   if (productIndex === -1) {
     cartCopy.push({
       id: anItem.id,
+      title: anItem.title,
       quantity: 1,
       discountedPrice: anItem.discountedPrice,
       price: anItem.price,
@@ -24,13 +29,12 @@ function addToCart(aCart, anItem) {
     ];
   }
 
-  newTotal = cartCopy.reduce((currentTotal, product) => {
-    currentTotal += product.quantity;
-    return currentTotal;
-  }, 0);
-  console.log(cartCopy);
+  newTotal = totalCount(cartCopy);
+  newSum = totalSum(cartCopy);
 
-  return { cart: cartCopy, total: newTotal };
+  console.log(cartCopy, " ", newSum);
+
+  return { cart: cartCopy, total: newTotal, sum: newSum };
 }
 
 export default addToCart;
