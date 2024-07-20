@@ -5,7 +5,7 @@ function DisplayPrice(ordPrice, discPrice, quantity = 1) {
     const currency = 'NOK';
     return (
         <div className="product-price"> 
-            <div> { Math.round(discPrice * quantity) }&nbsp;{currency}</div> 
+            { Math.round(discPrice * quantity) }&nbsp;{currency}
             { isdiscount ? <StyledDiscountedPrice isDiscounted={ isdiscount }> ({Math.round ((discPrice - ordPrice) * quantity)}&nbsp;{currency})</StyledDiscountedPrice> : ''}
         </div>
     );

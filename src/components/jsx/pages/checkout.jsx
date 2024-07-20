@@ -1,20 +1,18 @@
 import useStore from "../store/cartStore";
 import { shallow } from "zustand/shallow";
-import { Button } from "react-bootstrap";
+import ShowCart from "../data/showCart";
 
 function Checkout() {
-  const { total, clearCart } = useStore(
+  const { cart, clearCart } = useStore(
     (state) => ({
+      cart: state.cart,
       total: state.total,
       clearCart: state.clearCart
     }), 
     shallow,
   );
   return (
-    <div>
-        <div>Cart {total}</div>
-        <Button onClick={ clearCart }>Empty cart</Button>
-    </div>
+    <div>{ShowCart(cart, clearCart)}</div>
     );
 }
 
