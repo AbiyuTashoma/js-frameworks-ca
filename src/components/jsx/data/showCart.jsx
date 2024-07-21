@@ -48,7 +48,8 @@ function ShowCart () {
                     <tfoot>
                         <tr>
                             <td></td>
-                            <td colSpan={2}>Total: {sum}&nbsp;{currency}</td>
+                            <td>Total:</td>
+                            <td>{sum}&nbsp;{currency}</td>
                             <td></td>
                         </tr>
                     </tfoot>
