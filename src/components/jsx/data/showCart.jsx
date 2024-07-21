@@ -23,17 +23,38 @@ function ShowCart () {
     return ( cartLength > 0 ?
         <div>
             <div className="show-cart">
-                {cart.map((item) =>
-                    <div key={item.id}>
-                        <div>{item.title}</div>
-                        <div>{item.quantity}</div>
-                        {DisplayPrice(item.price, item.discountedPrice, item.quantity)}
-                        <Button className="me-3" variant="success" size="sm" onClick={() => addProduct(item)}>+</Button>
-                        <Button variant="danger" size="sm" onClick={() => removeProduct(item) }>-</Button>
-                    </div>
-                )}
+                <table>
+                    <thead>
+                        <th>Title</th>
+                        <th>Count</th>
+                        <th>Sub-total</th>
+                        <th></th>
+                    </thead>
+                    <tbody>
+                        {cart.map((item) =>
+                            <tr className="cart-row" key={item.id}>
+                                <td className="pe-2">{item.title}</td>
+                                <td className="pe-2">{item.quantity}</td>
+                                <td className="pe-2">{DisplayPrice(item.price, item.discountedPrice, item.quantity)}</td>
+                                <td>
+                                    <div className="button-cell-width">
+                                        <Button className="add-remove rounded" variant="success" size="sm" onClick={() => addProduct(item)}>+</Button>
+                                        <Button className="add-remove" variant="danger" size="sm" onClick={() => removeProduct(item) }>-</Button>
+                                    </div>
+                                </td>
+                            </tr>
+                        )}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td></td>
+                            <td>Total:</td>
+                            <td>{sum}&nbsp;{currency}</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
             </div>
-            <div>Total: {sum}&nbsp;{currency}</div>
             <div className="mt-4">
                 <Link className="checkout-button" to="/checkout">Checkout</Link>
                 <Button onClick={ clearCart } variant="secondary">Empty cart</Button>
