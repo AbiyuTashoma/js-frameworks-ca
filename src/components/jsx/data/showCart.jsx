@@ -21,9 +21,9 @@ function ShowCart () {
     const cartLength = cart.length;
     
     return ( cartLength > 0 ?
-        <div>
+        <div className="cart-body">
             <div className="show-cart">
-                <table>
+                <table className="table table-striped cart-table">
                     <thead>
                         <th>Title</th>
                         <th>Count</th>
@@ -38,8 +38,8 @@ function ShowCart () {
                                 <td className="pe-2">{DisplayPrice(item.price, item.discountedPrice, item.quantity)}</td>
                                 <td>
                                     <div className="button-cell-width">
-                                        <Button className="add-remove rounded" variant="success" size="sm" onClick={() => addProduct(item)}>+</Button>
-                                        <Button className="add-remove" variant="danger" size="sm" onClick={() => removeProduct(item) }>-</Button>
+                                        <Button className="me-1" variant="success" size="sm" onClick={() => addProduct(item)}>+</Button>
+                                        <Button variant="danger" size="sm" onClick={() => removeProduct(item) }>-</Button>
                                     </div>
                                 </td>
                             </tr>
@@ -55,12 +55,12 @@ function ShowCart () {
                     </tfoot>
                 </table>
             </div>
-            <div className="mt-4">
-                <Link className="checkout-button" to="/checkout">Checkout</Link>
+            <div className="mt-4 text-center">
+                <Link className="checkout-button me-3" to="/checkout">Checkout</Link>
                 <Button onClick={ clearCart } variant="secondary">Empty cart</Button>
             </div>
         </div>
-        : "There are no items in your cart"
+        : <div className="cart-body">There are no items in your cart</div>
     );
 }
 
