@@ -6,7 +6,7 @@ function Footer() {
         <div>&#169; eCom 2024</div>
         <ul className="navigation footer-link">
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/">Contact us</Link></li>
+            <li><Link to="/contact">Contact us</Link></li>
         </ul>
       </footer>
     );
