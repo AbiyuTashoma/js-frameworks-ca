@@ -1,19 +1,19 @@
-.add-remove {
-    padding: 0px 3px;
+.cart-table {
+    max-width: 700px;
 }
-
 tfoot {
     font-weight: bold;
 }
 
-// td {
-//     padding: 3px 5px;
-// }
-
-tbody>tr:nth-of-type(even) {
-    background-color: rgb(237 238 242);
-}
-
 .button-cell-width {
     width: max-content;
+}
+
+.show-cart {
+    display: flex;
+    justify-content: center;
+}
+
+.cart-body {
+    margin: 40px auto;
 }
