@@ -50,7 +50,6 @@ body {
 
 .cart-icon {
     width: 2em;
-    
 }
 
 .item-count {
@@ -76,5 +75,26 @@ body {
     transition-duration: 1s;
     &:hover {
         background-color: $menu-background-color-hover;
+    }
+}
+
+footer {
+    text-align: center;
+    background-color: lightgray;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.footer-link {
+    @extend .navigation;
+    justify-content: center;
+}
+
+footer a {
+    color: $logo-color;
+    transition-duration: 0.25s;
+    transition-property: color;
+    &:hover {
+        color: black;
     }
 }
