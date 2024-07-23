@@ -1,0 +1,9 @@
+form {
+    max-width: 500px;
+    margin: 40px auto;
+}
+
+.submit-button {
+    @extend .checkout-button;
+    padding: 5px 15px;
+}
