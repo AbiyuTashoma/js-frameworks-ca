@@ -5,6 +5,7 @@ import RouteNotFound from "../pages/routeNotFound";
 import AProduct from "../pages/aProduct";
 import Checkout from "../pages/checkout";
 import Contact from "../pages/contact";
+import CheckoutSuccess from "../pages/checkoutSuccess";
 
 function AppRoutes() {
     return (
@@ -14,6 +15,7 @@ function AppRoutes() {
                     <Route index element={<Home />} />
                     <Route path="/:id" element={<AProduct />} />
                     <Route path="/checkout" element={<Checkout />} />
+                    <Route path="/checkout-success" element={<CheckoutSuccess />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="*" element={<RouteNotFound />} />
                 </Route>
