@@ -1,54 +1,70 @@
-function Contact () {
-    return (
-        <div class="content-section">
-            <h1>Contact us</h1>
-            <form>
-                <p class="contact-p">You can reach us via the contact form below:</p>
-                <div class="message"></div>
-                
-                <div class="mb-2">
-                    <label for="name" title="name">
-                        Full name
-                    </label>
-                    <div>
-                        <input type="text" title="name" id="name" name="name" class="input-fields" maxlength="100"/>
-                        <div class="note-name"></div>                                                
-                    </div>
-                </div>
-                <div class="mb-2">
-                    <label for="email" title="email address">
-                        Email
-                    </label>
-                    <div>                
-                        <input type="email" id="email" title="email address" name="email" class="input-fields" maxlength="100"/>
-                        <div class="note-email"></div>
-                    </div>
-                </div>
-                <div class="mb-2">
-                    <label for="subject" title="subject">
-                        Subject
-                    </label>
-                    <div>
-                        <input type="text" title="subject" id="subject" name="subject" class="input-fields" maxlength="100"/>
-                        <div class="note-subject"></div>                                                
-                    </div>
-                </div>
-                <div class="mb-2">
-                    <label for="contact-message" title="message">
-                        Message
-                    </label>
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 
-                    <div>
-                        <textarea class="input-fields message-field" id="contact-message" title="message" maxlength="5000" name="message"></textarea>
-                    </div>
-                    <div class="note-contactmessage"></div>
-                </div>
-                <div class="mb-2">
-                    <input type="submit" title="send" name="send" value="Send" class="submit-message"/>
-                </div>
-            </form>
-        </div>
-    );
+const schema = yup
+  .object({
+    fullName: yup
+      .string()
+      .min(3, 'Full name should be at least 3 characters.')
+      .required('Please enter your full name'),
+    email: yup
+      .string()
+      .email()
+      .matches(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, {message: 'Enter a proper email address'})
+      .required('Please enter your email'),
+    subject: yup
+      .string()
+      .min(3, 'Your subject should be at least 3 characters.')
+      .required('Please enter your subject'),
+    message: yup
+      .string()
+      .min(3, 'Your message should be at least 3 characters.')
+      .required('Please enter your message'),
+  })
+  .required();
+
+function Contact () {
+    const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  function onSubmit(data) {
+    console.log(data);
+  }
+
+  return (
+    <div>
+        <form onSubmit={handleSubmit(onSubmit)} className='form'>
+            <h1>Contact us</h1>
+            <div>
+                <label htmlFor="fullName" className='form-label'>Full name</label>
+                <input id='fullName' name='fullName' className='form-control' {...register('fullName')} />
+                <p>{errors.fullName?.message}</p>
+            </div>
+            <div>
+                <label htmlFor="email" className='form-label'>Email</label>
+                <input id='email' name='email' className='form-control' {...register('email')} />
+                <p>{errors.email?.message}</p>
+            </div>
+            <div>
+                <label htmlFor="subject" className='form-label'>Subject</label>
+                <input id='subject' name='subject' className='form-control' {...register('subject')} />
+                <p>{errors.subject?.message}</p>
+            </div>
+            <div>
+                <label htmlFor="message" className='form-label'>Message</label>
+                <textarea id='message' name='message' className='form-control' {...register('message')}></textarea>
+                <p>{errors.message?.message}</p>
+            </div>
+            <input type="submit" className='submit-button'/>
+        </form>
+    </div>
+  );
 }
 
 export default Contact;
