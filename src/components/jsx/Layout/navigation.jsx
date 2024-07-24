@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Search from "./search";
 import useStore from "../store/cartStore";
 import { shallow } from "zustand/shallow";
 import Cart from "./cart";
@@ -15,7 +14,6 @@ function Nav() {
     return (
         <ul className="navigation">
             <li><Link className="menu" to="/">Home</Link></li>
-            <li><Search /></li>
             <li>{Cart(cart.length, total)}</li>
         </ul>
     );
