@@ -3,7 +3,7 @@ import Search from "../data/search";
 
 function Home() {
   return  (
-    <div>
+    <div className="main-section">
       <Search />
       <ProductsData />
     </div>

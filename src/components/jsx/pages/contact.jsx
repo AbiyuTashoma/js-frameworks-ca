@@ -11,7 +11,7 @@ const schema = yup
     email: yup
       .string()
       .email()
-      .matches(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, {message: 'Enter a proper email address'})
+      .matches(/^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/, {message: 'Enter a proper email address'})
       .required('Please enter your email'),
     subject: yup
       .string()
@@ -39,7 +39,7 @@ function Contact () {
 
   return (
     <div>
-        <form onSubmit={handleSubmit(onSubmit)} className='contact-form'>
+        <form onSubmit={handleSubmit(onSubmit)} className='contact-form main-section'>
             <h1>Contact us</h1>
             <div>
                 <label htmlFor="fullName" className='form-label'>Full name</label>

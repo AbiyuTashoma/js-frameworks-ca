@@ -13,7 +13,7 @@ function CheckoutSuccess() {
     clearCart();
 
     return (
-        <div className="text-center">
+        <div className="text-center main-section">
             <span>Your order is successfully placed.</span>
             <Link className="submit-button ms-3" to="/">To store</Link>
         </div>

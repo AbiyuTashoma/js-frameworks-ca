@@ -8,7 +8,7 @@ import { inArray } from "./js/inArray";
 function DisplayAProduct(product, cart, addProduct, removeProduct) {
     
   return (
-        <Container key={product.id}>
+        <Container key={product.id} className="main-section">
             <Row xs="1" md="2">
                 <Col>
                     <img src= {product['image']['url']} className="list-image" alt=""/>
