@@ -43,7 +43,7 @@ function GetApi(link) {
     }
 
     getData();
-  }, [updateProducts, updateIsLoading, updateIsError, link]);
+  }, [updateProducts, updateIsLoading, updateIsError, updateSearchProducts, link]);
 }
 
 export default GetApi;
