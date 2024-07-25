@@ -1,6 +1,7 @@
 import { shallow } from "zustand/shallow";
 import { useEffect } from "react";
 import useApi from "../store/apiStore";
+import useSearch from "../store/searchStore";
 
 function GetApi(link) {
   const { updateProducts, updateIsLoading, updateIsError } = useApi(
@@ -15,6 +16,13 @@ function GetApi(link) {
     shallow
   );
 
+  const { updateSearchProducts } = useSearch(
+    (state) => ({
+      updateSearchProducts: state.updateSearchProducts,
+    }),
+    shallow
+  );
+
   useEffect(() => {
     async function getData() {
       try {
@@ -25,6 +33,7 @@ function GetApi(link) {
         const json = await response.json();
 
         updateProducts(json['data']);
+        updateSearchProducts(json['data']);
 
       } catch (error) {
         updateIsError(true);
