@@ -1,4 +1,4 @@
-import GetApi from "../api/getApi";
+import GetProductApi from "../api/getProductApi";
 import Loading from "./loading";
 import Error from "./error";
 import { useParams } from "react-router-dom";
@@ -9,7 +9,7 @@ import { url } from "./js/constants";
 
 function Product() {
   let { id } = useParams();
-  const { data, isLoading, isError } = GetApi(url + `/${id}`);
+  const { data, isLoading, isError } = GetProductApi(url + `/${id}`);
 
   const { cart, addProduct, removeProduct } = useStore(
     (state) => ({
@@ -28,9 +28,7 @@ function Product() {
     return <Error />;
   }
 
-  console.log(data['data']);
-
-  return DisplayAProduct(data['data'], cart, addProduct, removeProduct);
+  return DisplayAProduct(data, cart, addProduct, removeProduct);
 }
 
 export default Product;

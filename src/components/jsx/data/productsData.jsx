@@ -3,11 +3,23 @@ import Loading from "./loading";
 import Error from "./error";
 import ProductsList from "./productsList";
 import { url } from "./js/constants";
+import useApi from "../store/apiStore";
+import { shallow } from "zustand/shallow";
 
 function ProductsData() {
-  const { data, isLoading, isError } = GetApi(url);
 
-  if (isLoading || !data) {
+  const { products, isLoading, isError } = useApi(
+    (state) => ({
+      products: state.products,
+      isLoading: state.isLoading,
+      isError: state.isError,
+    }),
+    shallow
+  );
+
+  GetApi(url);
+
+  if (isLoading || !products) {
     return <Loading />;
   }
 
@@ -15,9 +27,8 @@ function ProductsData() {
     return <Error />;
   }
 
-  console.log(data['data']);
-
-  return ProductsList(data['data']);
+  console.log(products);
+  return ProductsList(products);
 }
 
 export default ProductsData;

@@ -1,5 +1,5 @@
 function Error () {
-    return <div>Error loading</div>;
+    return <div className="text-center">Error loading</div>;
 };
 
 export default Error;

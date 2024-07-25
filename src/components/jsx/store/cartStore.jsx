@@ -9,7 +9,7 @@ const useStore = create(persist((set) => ({
   sum: 0,
   addProduct: (item) => set((state) => (addToCart(state.cart, item))),
   removeProduct: (item) => set((state) => (removeFromCart(state.cart, item))),
-  clearCart: () => set({ cart: [], total: 0}),
+  clearCart: () => set({ cart: [], total: 0, sum:0 }),
 }), {
   name: "cart",
 }));

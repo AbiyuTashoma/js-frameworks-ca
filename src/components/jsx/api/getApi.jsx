@@ -1,30 +1,49 @@
-import { useState, useEffect } from "react";
+import { shallow } from "zustand/shallow";
+import { useEffect } from "react";
+import useApi from "../store/apiStore";
+import useSearch from "../store/searchStore";
 
 function GetApi(link) {
-  const [data, setData] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
+  const { updateProducts, updateIsLoading, updateIsError } = useApi(
+    (state) => ({
+      products: state.products,
+      isLoading: state.isLoading,
+      isError: state.isError,
+      updateProducts: state.updateProducts,
+      updateIsLoading: state.updateIsLoading,
+      updateIsError: state.updateIsError
+    }),
+    shallow
+  );
+
+  const { updateSearchProducts } = useSearch(
+    (state) => ({
+      updateSearchProducts: state.updateSearchProducts,
+    }),
+    shallow
+  );
 
   useEffect(() => {
     async function getData() {
       try {
-        setIsLoading(true);
-        setIsError(false);
+        updateIsLoading(true);
+        updateIsError(false);
 
         const response = await fetch(link);
         const json = await response.json();
 
-        setData(json);
+        updateProducts(json['data']);
+        updateSearchProducts(json['data']);
+
       } catch (error) {
-        setIsError(true);
+        updateIsError(true);
       } finally {
-        setIsLoading(false);
+        updateIsLoading(false);
       }
     }
 
     getData();
-  }, [link]);
-  return { data, isLoading, isError };
+  }, [updateProducts, updateIsLoading, updateIsError, link]);
 }
 
 export default GetApi;
