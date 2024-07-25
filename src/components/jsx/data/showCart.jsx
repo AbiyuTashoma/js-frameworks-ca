@@ -21,7 +21,7 @@ function ShowCart () {
     const cartLength = cart.length;
     
     return ( cartLength > 0 ?
-        <div className="cart-body">
+        <div className="cart-body main-section">
             <div className="show-cart">
                 <table className="table table-striped cart-table">
                     <thead>
@@ -60,7 +60,7 @@ function ShowCart () {
                 <Button onClick={ clearCart } variant="secondary">Empty cart</Button>
             </div>
         </div>
-        : <div className="cart-body">There are no items in your cart</div>
+        : <div className="cart-body text-center main-section">There are no items in your cart</div>
     );
 }
 

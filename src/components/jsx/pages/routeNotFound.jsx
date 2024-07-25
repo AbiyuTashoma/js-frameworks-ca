@@ -1,5 +1,5 @@
 function RouteNotFound() {
-  return <div>RouteNotFound</div>
+  return <div className="main-section text-center">RouteNotFound</div>
 }
 
 export default RouteNotFound;

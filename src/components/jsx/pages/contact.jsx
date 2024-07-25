@@ -39,7 +39,7 @@ function Contact () {
 
   return (
     <div>
-        <form onSubmit={handleSubmit(onSubmit)} className='contact-form'>
+        <form onSubmit={handleSubmit(onSubmit)} className='contact-form main-section'>
             <h1>Contact us</h1>
             <div>
                 <label htmlFor="fullName" className='form-label'>Full name</label>
