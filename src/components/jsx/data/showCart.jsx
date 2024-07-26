@@ -25,10 +25,12 @@ function ShowCart () {
             <div className="show-cart">
                 <table className="table table-striped cart-table">
                     <thead>
-                        <th>Title</th>
-                        <th>Count</th>
-                        <th>Sub-total</th>
-                        <th></th>
+                        <tr>
+                            <th>Title</th>
+                            <th>Count</th>
+                            <th>Sub-total</th>
+                            <th></th>
+                        </tr>
                     </thead>
                     <tbody>
                         {cart.map((item) =>
