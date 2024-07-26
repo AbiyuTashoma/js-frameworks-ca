@@ -44,22 +44,22 @@ function Contact () {
             <div>
                 <label htmlFor="fullName" className='form-label'>Full name</label>
                 <input id='fullName' name='fullName' className='form-control' {...register('fullName')} />
-                <p>{errors.fullName?.message}</p>
+                <p className='text-danger'>{errors.fullName?.message}</p>
             </div>
             <div>
                 <label htmlFor="email" className='form-label'>Email</label>
                 <input id='email' name='email' className='form-control' {...register('email')} />
-                <p>{errors.email?.message}</p>
+                <p className='text-danger'>{errors.email?.message}</p>
             </div>
             <div>
                 <label htmlFor="subject" className='form-label'>Subject</label>
                 <input id='subject' name='subject' className='form-control' {...register('subject')} />
-                <p>{errors.subject?.message}</p>
+                <p className='text-danger'>{errors.subject?.message}</p>
             </div>
             <div>
                 <label htmlFor="message" className='form-label'>Message</label>
                 <textarea id='message' name='message' className='form-control' {...register('message')}></textarea>
-                <p>{errors.message?.message}</p>
+                <p className='text-danger'>{errors.message?.message}</p>
             </div>
             <input type="submit" className='submit-button'/>
         </form>
