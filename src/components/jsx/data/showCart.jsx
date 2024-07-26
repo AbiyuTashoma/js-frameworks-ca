@@ -58,7 +58,7 @@ function ShowCart () {
                 </table>
             </div>
             <div className="mt-4 text-center">
-                <Link className="checkout-button me-3" to="/checkout-success">Checkout</Link>
+                <Link onClick={ clearCart } className="checkout-button me-3" to="/checkout-success">Checkout</Link>
                 <Button onClick={ clearCart } variant="secondary">Empty cart</Button>
             </div>
         </div>
