@@ -1,16 +1,6 @@
 import { Link } from "react-router-dom";
-import useStore from "../store/cartStore";
-import { shallow } from "zustand/shallow";
 
 function CheckoutSuccess() {
-    const { clearCart } = useStore(
-        (state) => ({
-        clearCart: state.clearCart
-        }), 
-        shallow,
-    );
-
-    clearCart();
 
     return (
         <div className="text-center main-section">
