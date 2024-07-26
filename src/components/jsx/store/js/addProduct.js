@@ -32,8 +32,6 @@ function addToCart(aCart, anItem) {
   newTotal = totalCount(cartCopy);
   newSum = totalSum(cartCopy);
 
-  console.log(cartCopy, " ", newSum);
-
   return { cart: cartCopy, total: newTotal, sum: newSum };
 }
 
