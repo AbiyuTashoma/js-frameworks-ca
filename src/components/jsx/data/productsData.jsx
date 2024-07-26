@@ -27,7 +27,6 @@ function ProductsData() {
     return <Error />;
   }
 
-  console.log(products);
   return ProductsList(products);
 }
 

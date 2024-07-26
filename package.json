@@ -1,6 +1,6 @@
 {
   "name": "js-frameworks-ca",
-  "version": "0.1.26",
+  "version": "0.1.27",
   "private": true,
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
