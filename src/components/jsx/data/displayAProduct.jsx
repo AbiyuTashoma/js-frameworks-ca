@@ -25,7 +25,7 @@ function DisplayAProduct(product, cart, addProduct, removeProduct) {
                             <Button variant="secondary" onClick={() => removeProduct(product) } disabled= {!inArray(cart, product)}>Remove from cart</Button>
                         </div>
                         { InCart(cart, product) }
-                        <CheckoutButton cartLength={cart.length} linkClass="checkout-button" toLink="/checkout"/>
+                        <CheckoutButton cartLength={cart.length} btnName="Checkout" linkClass="checkout-button" toLink="/checkout"/>
                     </Row>
                 </Col>
             </Row>

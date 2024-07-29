@@ -1,10 +1,11 @@
-function CheckoutButton ({cartLength, linkClass, toLink}) {
+import { Link } from "react-router-dom";
+
+function CheckoutButton ({cartLength, btnName, linkClass, toLink}) {
     return (
-        cartLength ?
+        cartLength &&
             <div className="mt-4">
-                <a className={linkClass} href={toLink}>Checkout</a>
+                <Link to={toLink} className={linkClass}>{ btnName }</Link>
             </div>
-        : ""
     );
 }
 
