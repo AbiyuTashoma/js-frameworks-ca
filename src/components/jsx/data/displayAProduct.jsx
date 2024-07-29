@@ -1,9 +1,9 @@
 import { Row, Col, Container, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import DisplayPrice from "./price";
 import Reviews from "./reviews";
 import InCart from "./inCart";
 import { inArray } from "./js/inArray";
+import CheckoutButton from "./checkoutButton";
 
 function DisplayAProduct(product, cart, addProduct, removeProduct) {
     
@@ -25,9 +25,7 @@ function DisplayAProduct(product, cart, addProduct, removeProduct) {
                             <Button variant="secondary" onClick={() => removeProduct(product) } disabled= {!inArray(cart, product)}>Remove from cart</Button>
                         </div>
                         { InCart(cart, product) }
-                        <div className="mt-4">
-                            {cart.length ? <Link className="checkout-button" to="/checkout">Checkout</Link> : ""}
-                        </div>
+                        <CheckoutButton cartLength={cart.length} linkClass="checkout-button" toLink="/checkout"/>
                     </Row>
                 </Col>
             </Row>
