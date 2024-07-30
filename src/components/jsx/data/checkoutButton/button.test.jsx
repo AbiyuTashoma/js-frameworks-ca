@@ -1,8 +1,9 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import CheckoutButton from ".";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 
 describe('checkout button', () => {
+    const mockNullLength = false
     const mockCartLength = true;
     const mockBtnName = "Checkout";
     const mockClass = "btn-class";
@@ -10,13 +11,13 @@ describe('checkout button', () => {
     
     test('returns correct element', () => {
         render(
-            <MemoryRouter initialEntries={['/checkout']}>
+            <MemoryRouter initialEntries={['/product']}>
                 <Routes>
                     <Route 
-                        path='/checkout' 
+                        path='/product' 
                         element={
                             <CheckoutButton 
-                                cartLength={mockCartLength} 
+                                cartLength={mockNullLength} 
                                 btnName={mockBtnName}
                                 linkClass={mockClass} 
                                 toLink={mockToLink} />
@@ -26,37 +27,32 @@ describe('checkout button', () => {
             </MemoryRouter>
         );
 
-        screen.debug();
-
-        const linkElement1 = screen.getByText('Checkout');
-        expect(linkElement1).toBeInTheDocument();
+        const bName = screen.queryByText('Checkout');
+        expect(bName).toBeFalsy();
 
         render(
-            <MemoryRouter initialEntries={['/checkout']}>
+            <MemoryRouter initialEntries={['/product']}>
                 <Routes>
                     <Route 
-                        path='/checkout' 
+                        path='/product' 
                         element={
                             <CheckoutButton 
                                 cartLength={mockCartLength} 
-                                btnName="new button"
+                                btnName={mockBtnName}
                                 linkClass={mockClass} 
                                 toLink={mockToLink} />
                             } 
                     />
+                    <Route path='/checkout' element={ <div>Checkout page</div> } />
                 </Routes>  
             </MemoryRouter>
         );
 
-        screen.debug();
-
-        const linkElement2 = screen.getByText('new button');
-        expect(linkElement2).toBeInTheDocument();
-
-        // const href1 = screen.findByRole("a");
-        // expect(href1.href).toEqual("/checkout");
+        const linkElement = screen.getByText('Checkout');
+        expect(linkElement).toBeInTheDocument();
+        fireEvent.click(linkElement);
+        const pageElement = screen.getByText('Checkout page');
+        expect(pageElement).toBeInTheDocument();
     });
 
 })
-
-{/* <CheckoutButton cartLength={true} linkClass={'btn-class'} toLink={'/home'} /> */}
