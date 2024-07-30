@@ -1,5 +1,5 @@
-import ProductsData from "../data/productsData";
-import Search from "../data/search";
+import ProductsData from "../../data/productsData";
+import Search from "../../data/search";
 
 function Home() {
   return  (

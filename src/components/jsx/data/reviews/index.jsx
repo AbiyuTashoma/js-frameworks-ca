@@ -1,4 +1,4 @@
-import StarRating from "./reviewRatinng";
+import StarRating from "../reviewRating";
 
 function Reviews (productReview) {
     const isReview = Boolean(productReview.length);

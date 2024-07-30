@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import useStore from "../store/cartStore";
+import useStore from "../../store/cartStore";
 import { shallow } from "zustand/shallow";
-import Cart from "./cart";
+import Cart from "../cart";
 
 function Nav() {
     const { cart, total } = useStore(

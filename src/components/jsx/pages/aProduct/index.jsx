@@ -1,4 +1,4 @@
-import Product from "../data/product";
+import Product from "../../data/product";
 
 function AProduct() {
   return  <Product />;

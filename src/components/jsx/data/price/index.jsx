@@ -1,5 +1,5 @@
-import { StyledDiscountedPrice } from "../styled/styled"
-import { currency } from "./js/constants";
+import { StyledDiscountedPrice } from "../../styled/priceStyled"
+import { currency } from "../../../js/constants";
 
 function DisplayPrice(ordPrice, discPrice, quantity = 1) {
     const isdiscount = Boolean(ordPrice > discPrice)

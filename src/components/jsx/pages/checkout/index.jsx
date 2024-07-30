@@ -1,4 +1,4 @@
-import ShowCart from "../data/showCart";
+import ShowCart from "../../data/showCart";
 
 function Checkout() {
   return <ShowCart />;

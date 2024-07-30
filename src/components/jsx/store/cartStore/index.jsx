@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import addToCart from './js/addProduct';
-import removeFromCart from './js/removeProduct';
+import addToCart from '../../../js/addProduct';
+import removeFromCart from '../../../js/removeProduct';
 
 const useStore = create(persist((set) => ({
   cart: [],

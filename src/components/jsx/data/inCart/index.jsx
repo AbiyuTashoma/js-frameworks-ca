@@ -1,4 +1,4 @@
-import DisplayPrice from "./price";
+import DisplayPrice from "../price";
 
 function InCart (cart, product) {
 

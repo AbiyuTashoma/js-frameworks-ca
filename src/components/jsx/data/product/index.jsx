@@ -1,11 +1,11 @@
-import GetProductApi from "../api/getProductApi";
-import Loading from "./loading";
-import Error from "./error";
+import GetProductApi from "../../api/getProducApi";
+import Loading from "../loading";
+import Error from "../error";
 import { useParams } from "react-router-dom";
-import DisplayAProduct from "./displayAProduct";
+import DisplayAProduct from "../displayAProduct";
 import { shallow } from "zustand/shallow";
-import useStore from "../store/cartStore";
-import { url } from "./js/constants";
+import useStore from "../../store/cartStore";
+import { url } from "../../../js/constants";
 
 function Product() {
   let { id } = useParams();
