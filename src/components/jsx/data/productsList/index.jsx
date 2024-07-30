@@ -1,5 +1,5 @@
 import { Row, Col, Container } from "react-bootstrap";
-import DisplayPrice from "./price";
+import DisplayPrice from "../price";
 import { Link } from "react-router-dom";
 
 function ProductsList(products) {

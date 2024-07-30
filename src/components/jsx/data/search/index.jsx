@@ -1,7 +1,7 @@
-import useApi from "../store/apiStore";
-import useSearch from "../store/searchStore";
+import useApi from "../../store/apiStore";
+import useSearch from "../../store/searchStore";
 import { shallow } from "zustand/shallow";
-import SearchLabel from "./searchLabel";
+import SearchLabel from "../searchLabel";
 
 
 function Search() {

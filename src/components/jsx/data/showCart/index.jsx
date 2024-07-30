@@ -1,9 +1,9 @@
-import useStore from "../store/cartStore";
+import useStore from "../../store/cartStore";
 import { shallow } from "zustand/shallow";
-import DisplayPrice from "./price";
+import DisplayPrice from "../price";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { currency } from "./js/constants";
+import { currency } from "../../../js/constants";
 
 function ShowCart () {
     

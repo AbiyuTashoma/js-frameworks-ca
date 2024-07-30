@@ -1,4 +1,4 @@
-import CheckoutButton from "../data/checkoutButton";
+import CheckoutButton from "../../data/checkoutButton";
 
 function CheckoutSuccess() {
 

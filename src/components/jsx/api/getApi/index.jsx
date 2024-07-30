@@ -1,7 +1,7 @@
 import { shallow } from "zustand/shallow";
 import { useEffect } from "react";
-import useApi from "../store/apiStore";
-import useSearch from "../store/searchStore";
+import useApi from "../../store/apiStore";
+import useSearch from "../../store/searchStore";
 
 function GetApi(link) {
   const { updateProducts, updateIsLoading, updateIsError } = useApi(

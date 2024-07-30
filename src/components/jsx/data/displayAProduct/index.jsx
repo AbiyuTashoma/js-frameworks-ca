@@ -1,9 +1,9 @@
 import { Row, Col, Container, Button } from "react-bootstrap";
-import DisplayPrice from "./price";
-import Reviews from "./reviews";
-import InCart from "./inCart";
-import { inArray } from "./js/inArray";
-import CheckoutButton from "./checkoutButton";
+import DisplayPrice from "../price";
+import Reviews from "../reviews";
+import InCart from "../inCart";
+import { inArray } from "../../../js/inArray";
+import CheckoutButton from "../checkoutButton";
 
 function DisplayAProduct(product, cart, addProduct, removeProduct) {
     
