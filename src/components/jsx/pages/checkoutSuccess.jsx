@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
+import CheckoutButton from "../data/checkoutButton";
 
 function CheckoutSuccess() {
 
     return (
         <div className="text-center main-section">
             <span>Your order is successfully placed.</span>
-            <Link className="submit-button ms-3" to="/">To store</Link>
+            <CheckoutButton cartLength={true} btnName={'To store'} linkClass={'submit-button ms-3'} toLink='/' />
         </div>
     );
 }
