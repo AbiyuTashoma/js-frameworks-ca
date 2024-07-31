@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { cleanup, render, screen } from "@testing-library/react";
 import InCart from ".";
 
 describe('InCart ()', () => {
@@ -19,33 +19,41 @@ describe('InCart ()', () => {
     }
     ];
 
-    const mockAProduct = {
+    const mockNewProduct = {
         "id": "159fdd2f-2b12-46de-9654-d9139525ba87",
         "title": "Gold headphones",
         "description": "Professional headphones with gold trim.",
         "price": 449,
         "discountedPrice": 382,
-        "image": {
-            "url": "https://static.noroff.dev/api/online-shop/3-headphones-beats.jpg",
-            "alt": ""
-        },
-        "rating": 4,
-        "tags": [
-            "headphones"
-        ],
-        "reviews": [
-            {
-            "id": "88e11191-d2e5-4bfb-9bcb-d7e158284657",
-            "username": "Michael J.",
-            "rating": 4,
-            "description": "Good sound quality."
-            }
-        ]
     };
 
-    test('it verifies product is in cart and return details', () => {
-        render(<InCart cart={mockCart} product={mockAProduct} />)
+    const mockExistingProduct = {
+        "id": "fbf07ebe-9f9a-4895-8a16-567acbbeef4e",
+        "title": "Wireless Keyboard",
+        "quantity": 4,
+        "discountedPrice": 75.99,
+        "price": 75.99
+    };
 
-        screen.debug();
+    test('it verifies product is in cart and returns nothing if it doesnt', () => {
+        render(InCart(mockCart, mockNewProduct));
+
+        const productQuantity = screen.queryByText('In cart:');
+        const productSubtotal = screen.queryByText('Sub-total:');
+
+        expect(productQuantity).toBeFalsy();
+        expect(productSubtotal).toBeFalsy();
+
+    });
+
+    test('it verifies product is in cart and return details if it does', () => {
+        render(InCart(mockCart, mockExistingProduct));
+
+        const productQuantity = screen.queryByText('In cart:');
+        const productSubtotal = screen.queryByText('Sub-total:');
+
+        expect(productQuantity).toBeTruthy();
+        expect(productSubtotal).toBeTruthy();
+
     })
 })
