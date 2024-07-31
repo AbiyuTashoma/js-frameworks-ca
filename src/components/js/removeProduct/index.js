@@ -1,5 +1,5 @@
-import totalCount from "./totalCount";
-import totalSum from "./totalSum";
+import totalCount from "../totalCount";
+import totalSum from "../totalSum";
 
 function removeFromCart(aCart, anItem) {
   let cartCopy;
