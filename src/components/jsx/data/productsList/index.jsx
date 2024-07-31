@@ -13,7 +13,7 @@ function ProductsList(products) {
                         </Link>
                         <Row className="list-detail">
                             <Col>
-                                <div> {product['title']}</div>
+                                <div title="product-title"> {product['title']}</div>
                                 { DisplayPrice(product['price'], product['discountedPrice'])}
                             </Col>
                             <Col className="view-button-container">
