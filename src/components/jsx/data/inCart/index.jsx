@@ -2,7 +2,7 @@ import DisplayPrice from "../price";
 
 function InCart (cart, product) {
 
-    let itemIndex = cart.findIndex((item) => product.id === item.id);
+    let itemIndex = cart.findIndex((item) => item.id === product.id);
 
     return ( itemIndex >= 0 &&
         <div className="incart">
