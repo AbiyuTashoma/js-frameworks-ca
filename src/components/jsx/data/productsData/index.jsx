@@ -1,4 +1,4 @@
-import GetApi from "../../api/getApi";
+import GetApi from "../../../js/getApi";
 import Loading from "../loading";
 import Error from "../error";
 import ProductsList from "../productsList";

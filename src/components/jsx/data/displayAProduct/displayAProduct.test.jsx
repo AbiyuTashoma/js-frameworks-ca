@@ -51,8 +51,6 @@ describe('DisplayAProduct ()', () => {
             </MemoryRouter>
         );
 
-        screen.debug();
-
         const title = screen.getByText('Gold headphones');
         const description = screen.getByText('Professional headphones with gold trim.');
         const price = screen.getAllByText('382 NOK');

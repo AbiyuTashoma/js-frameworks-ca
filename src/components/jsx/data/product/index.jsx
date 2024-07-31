@@ -1,4 +1,4 @@
-import GetProductApi from "../../api/getProducApi";
+import GetProductApi from "../../../js/getProductApi";
 import Loading from "../loading";
 import Error from "../error";
 import { useParams } from "react-router-dom";
