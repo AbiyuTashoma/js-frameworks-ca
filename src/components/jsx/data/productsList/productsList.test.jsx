@@ -18,10 +18,12 @@ describe('ProductsList ()', () => {
 
         const images = screen.getAllByRole('img');
         const titles = screen.getAllByTitle('product-title');
+        const prices = screen.getAllByTestId('product-price');
         const viewButtons = screen.getAllByText('View');
 
         expect(images).toHaveLength(mockLength);
         expect(titles).toHaveLength(mockLength);
+        expect(prices).toHaveLength(mockLength);
         expect(viewButtons).toHaveLength(mockLength);
 
         images.map((image, index) => {
@@ -30,6 +32,10 @@ describe('ProductsList ()', () => {
 
         titles.map((title, index) => {
             expect(title).toHaveTextContent(mockProducts[index].title);
+        });
+
+        prices.map((price, index) => {
+            expect(price).toHaveTextContent(Math.round(mockProducts[index].discountedPrice));
         });
 
         viewButtons.map((button, index) => {
