@@ -4,6 +4,9 @@
 
 eCommerce website Project
 
+## Test status badge
+![Unit test](https://github.com/AbiyuTashoma/js-frameworks-ca/actions/workflows/test.yml/badge.svg)
+
 ## Deploy status badge
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/164eaf81-94d1-45ba-bf54-dc50bac1508b/deploy-status)](https://app.netlify.com/sites/cosmic-monstera-e885b3/deploys)
