@@ -33,8 +33,9 @@ function Contact () {
     resolver: yupResolver(schema),
   });
 
-  function onSubmit(data) {
+  function onSubmit(data, event) {
     console.log(data);
+    event.target.reset();
   }
 
   return (
