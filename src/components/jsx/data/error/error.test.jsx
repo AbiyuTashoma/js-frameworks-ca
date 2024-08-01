@@ -7,5 +7,6 @@ describe('Error ()', () => {
 
         const error = screen.getByText('Error loading');
         expect(error).toBeInTheDocument;
+        expect(error).toHaveAttribute('class', 'text-center text-danger');
     });
 })
