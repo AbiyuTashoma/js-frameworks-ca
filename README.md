@@ -5,7 +5,8 @@
 eCommerce website Project
 
 ## Test status badge
-![Unit test](https://github.com/AbiyuTashoma/js-frameworks-ca/actions/workflows/test.yml/badge.svg)
+
+![Automated Unit Test](https://github.com/AbiyuTashoma/js-frameworks-ca/actions/workflows/test.yml/badge.svg)
 
 ## Deploy status badge
 
