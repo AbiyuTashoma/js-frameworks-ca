@@ -16,11 +16,11 @@ function DisplayAProduct(product, cart, addProduct, removeProduct) {
                 <Col className="list-detail">
                     <Row>
                         <div className="product-title"> {product['title']} </div>
-                        <div className="product-description"> {product['description']} </div>
+                        <div className="product-description mb-3"> {product['description']} </div>
                         { DisplayPrice(product['price'], product['discountedPrice'])}
                     </Row>
                     <Row>
-                        <div className="mt-2">
+                        <div className="mt-3 mb-3">
                             <Button className="me-3" variant="success" onClick={() => addProduct(product)}>Add to cart</Button>
                             <Button variant="secondary" onClick={() => removeProduct(product) } disabled= {!inArray(cart, product)}>Remove from cart</Button>
                         </div>
