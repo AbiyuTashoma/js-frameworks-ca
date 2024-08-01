@@ -25,10 +25,10 @@ function Search() {
   }
 
   return (
-      <form className="input-group search-form">
-          <SearchLabel />
-          <input type="search" onChange={(event) => handleOnChange(event.target.value)} className="form-control" id="search" placeholder="search here"/>
-        </form>
+      <form className="input-group search-form" onSubmit={(event) => event.preventDefault()}>
+        <SearchLabel />
+        <input type="search" onChange={(event) => handleOnChange(event.target.value)} className="form-control" id="search" placeholder="search here"/>
+      </form>
   );
 }
 
