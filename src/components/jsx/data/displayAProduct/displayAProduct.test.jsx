@@ -53,7 +53,7 @@ describe('DisplayAProduct ()', () => {
 
         const title = screen.getByText('Gold headphones');
         const description = screen.getByText('Professional headphones with gold trim.');
-        const price = screen.getAllByText('382 NOK');
+        const price = screen.getAllByTestId('product-price');
         const image = screen.getByRole('img');
         const review = screen.getByText('Good sound quality.');
 
@@ -63,7 +63,7 @@ describe('DisplayAProduct ()', () => {
 
         expect(title).toBeInTheDocument;
         expect(description).toBeInTheDocument;
-        expect(price).toBeInTheDocument;
+        expect(price[0]).toHaveTextContent('382');
         expect(image).toHaveAttribute('src', 'https://static.noroff.dev/api/online-shop/3-headphones-beats.jpg');
         expect(checkoutButton).toHaveAttribute('href', '/checkout');
         expect(review).toBeInTheDocument;
