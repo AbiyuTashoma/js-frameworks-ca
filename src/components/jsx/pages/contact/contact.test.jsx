@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import Contact from ".";
 
 describe('Contact ()', () => {  
-    test('displays error if not valid', () => {
+    test('it displays input elements', () => {
 
         const mockName = 'name';
         const mockEmail = 'name@noroff.no';
