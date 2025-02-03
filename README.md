@@ -24,6 +24,11 @@ A user friendly eCommerce website Project
 - Add to cart, remove from cart and empty cart
 - Contact form
 
+### Workflow
+
+- Automated unit test
+- Branch protection
+
 ## Built With
 
 - React JS
