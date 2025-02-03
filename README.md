@@ -1,6 +1,7 @@
 # eCom
 
-![image](https://user-images.githubusercontent.com/52622303/164316813-4b12d99f-aeb7-4069-85cf-e72b3a50ac99.png)
+![bilde](https://github.com/user-attachments/assets/7a244a8e-06ec-42e6-8891-d6888a88fe33)
+
 An e-commerce shop
 
 ## Description
@@ -20,7 +21,7 @@ A user friendly eCommerce website Project
 - Display store products
 - Dynamic search bar
 - Sale price and price summary
-- Add, remove and empty cart
+- Add to cart, remove from cart and empty cart
 - Contact form
 
 ## Built With
@@ -59,7 +60,7 @@ https://github.com/AbiyuTashoma/js-frameworks-ca
 - npm run start
 ```
 
-3. testing:
+4. testing:
 
 ```
 - npm run test
@@ -69,14 +70,11 @@ https://github.com/AbiyuTashoma/js-frameworks-ca
 
 1. Fork https://github.com/AbiyuTashoma/js-frameworks-ca
 2. Create a branch from the master
-3. Commit changes and upgrade version
-4. Open a pull request (PR) for review
-5. The PR will be merged once reviewed
+3. Commit changes
+4. Upgrade version
+5. Open a pull request (PR) for review
+6. The PR will be merged once reviewed
 
 ## Contact
 
 Should you have any question or suggestion I can be reached through my email: AbiTas52474@stud.noroff.no
-
-```
- AbiTas52474@stud.noroff.no
-```
