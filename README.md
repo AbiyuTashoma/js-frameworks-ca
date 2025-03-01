@@ -39,7 +39,7 @@ A user friendly eCommerce website Project
 
 ## Getting Started
 
-To get started, follow one the following options
+To get started, follow one of the following options
 
 ### Visit the hosted website
 
